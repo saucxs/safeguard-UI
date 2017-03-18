@@ -6,8 +6,8 @@ export default () => {
   return (
     <Row className="footer" fluid>
       <Col>
-        {/*<a href="http://www.baifendian.com" className="footer__logo">*/}
-          {/*<img src={require('public/bfd.png')} />*/}
+        {/*<a href="http://www.chengxinsong.cn" className="footer__logo">*/}
+          {/*<img src={require('public/logo-small.png')} />*/}
         {/*</a>*/}
         <a href="https://github.com/saucxs">Github主页</a>
         &nbsp;&nbsp;|&nbsp;&nbsp;
