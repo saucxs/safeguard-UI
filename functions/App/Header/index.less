@@ -20,9 +20,41 @@
   background-size: 30px 30px;
   height: 30px;
   line-height: 30px;
+  sub{
+    margin-left:3px;
+    bottom: 0px;
+    font-size: 50%;
+  }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     //background: url('~public/logo@2x.png') left center no-repeat;
     background-size: 30px 30px;
+  }
+}
+.header_nav{
+  font-size:14px;
+  margin-top: 2px;
+  @media(max-width:670px){
+    display: none;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    li{
+      display: inline-block;
+      margin: 0px 6px 0px 10px;
+      a{
+        display: block;
+        padding: 0 12px;
+        line-height: 26px;
+        border-radius: 16px;
+        transition: all .2s;
+        &:hover,
+        &.active{
+          background-color: #fff;
+          color: #42a5f5;
+        }
+      }
+    }
   }
 }
 
@@ -30,28 +62,4 @@
   line-height: 20px;
   padding: 5px 0;
 }
-.middle_part{
-  margin: 2px 0px 0px 30px;
-}
-.middle_part ul{
-  margin: 0;
-  padding: 0;
-}
-.middle_part li{
-  display: inline-block;
-  margin-right: 6px;
 
-}
-.middle_part ul li a{
-  display: block;
-  padding: 0 18px;
-  line-height: 26px;
-  border-radius: 16px;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  float: left;
-}
-.middle_part a:hover .middle_part a{
-  color: #fff;
-  text-decoration: none;
-}

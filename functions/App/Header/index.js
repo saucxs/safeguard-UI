@@ -1,7 +1,7 @@
 import './index.less'
 import React, { PropTypes, Component } from 'react'
 import { Row, Col } from 'bfd/Layout'
-import { Link, browserHistory } from 'react-router'
+import { Link,IndexLink, browserHistory } from 'react-router'
 import xhr from 'bfd/xhr'
 import auth from 'public/auth'
 
@@ -22,22 +22,38 @@ class Header extends Component {
       }
     })
   }
+  renderNav(){
+    return(
+      <ul>
+        <li>
+          <IndexLink to="/" activeClassName="active">首页</IndexLink>
+        </li>
+        <li>
+          <Link to="/guide" activeClassName="active">指南</Link>
+        </li>
+        <li>
+          <Link to="/components" activeClassName="active">组件</Link>
+        </li>
+        <li>
+          <Link to="/changelog" activeClassName="active">更新日志</Link>
+        </li>
+        <li>
+          <Link to="/scaffold" activeClassName="active">脚手架</Link>
+        </li>
+      </ul>
+    )
+  }
 
   render() {
     return (
       <Row className="header" fluid>
         <Col>
           <Link to="/" className="header__logo">
-            SYSTEM NAME
+            safeguard-UI<sub>v0.0.1</sub>
           </Link>
         </Col>
-        <Col className="middle_part">
-          <ul>
-            <li><Link to="/">首页</Link></li>
-            <li><Link to="/">指南</Link></li>
-            <li><Link to="/">更新日志</Link></li>
-            <li><Link to="/">脚手架</Link></li>
-          </ul>
+        <Col className="header_nav">
+          {this.renderNav()}
         </Col>
         <Col className="header__right" right>
           欢迎您，{auth.user.name} &nbsp;|&nbsp;
