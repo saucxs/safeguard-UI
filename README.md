@@ -3,7 +3,7 @@ react脚手架，react.js组件库,
 
 ##安装
 ```sh
- git clone https://github.com/saucxs/safeguard-UI.git
+git clone https://github.com/saucxs/safeguard-UI.git
 
 cd safeguard-UI
 
@@ -15,6 +15,9 @@ npm start
 
 ```````
 在浏览器中，输入http://localhost:3001
+
+##效果
+![Image 测试](https://github.com/saucxs/safeguard-UI/public/show.png)
 
 
 ##浏览器支持
