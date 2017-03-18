@@ -26,7 +26,7 @@ class Header extends Component {
     return(
       <ul>
         <li>
-          <IndexLink to="/" activeClassName="active">首页</IndexLink>
+          <IndexLink to="/home" activeClassName="active">首页</IndexLink>
         </li>
         <li>
           <Link to="/guide" activeClassName="active">指南</Link>

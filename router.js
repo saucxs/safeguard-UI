@@ -24,85 +24,48 @@ function requireAuth(nextState, replace) {
 }
 
 export default render((
-  <Router
-    history={browserHistory}
-    onUpdate={() => {
-      process.done()
-      window.scrollTo(0, 0)
-    }}
-  >
+  <Router onUpdate={() => {
+    process.done()
+    window.scrollTo(0, 0)
+  }} history={browserHistory}>
     <Route
       path="/"
-      onEnter={(...args) => {
-        requireAuth(...args)
-        process.start()
-      }}
+      onEnter={() => process.start()}
       onChange={() => process.start()}
       component={App}
-     >
-      <IndexRedirect to="/overview/todos" />
-        {/*basic commponent*/}
-      <Route path="overview">
-        <Route path="todos" getComponent={(location, cb) => {
-          require.ensure([], require => {
-            cb(null, require('./functions/Overview/Todos').default)
-          })
-        }} />
-          <Route path="input01" getComponent={(location, cb) => {
-          require.ensure([], require => {
-              cb(null, require('./functions/Overview/Input01').default)
-          })
+    >
+      {/*init*/}
+      <Route path="home" getComponent={(location, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./functions/Home').default)
+        })
       }} />
-          <Route path="datatable_01" getComponent={(location, cb) => {
-              require.ensure([], require => {
-                  cb(null, require('./functions/Overview/DataTable_01').default)
-              })
-          }} />
-          <Route path="datatable_02" getComponent={(location, cb) => {
-              require.ensure([], require => {
-                  cb(null, require('./functions/Overview/DataTable_02').default)
-              })
-          }} />
-        <Route path="percent" getComponent={(location, cb) => {
+      {/*guide*/}
+      <Route path="guide" getComponent={(location, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./functions/Guide').default)
+        })
+      }} />
+      {/*主页*/}
+      <Route path="home" getComponent={(location, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./functions/Home').default)
+        })
+      }} />
+      {/*component*/}
+      <Route path="components" getComponent={(location, cb) => {
+        require.ensure([], require => {
+          cb(null, require('./functions/Components').default)
+        })
+      }}>
+        <IndexRedirect to="/components/Button"/>
+        <Route path=":component" getComponent={(location, cb) => {
+          const component = location.pathname.split('/').pop()
           require.ensure([], require => {
-            cb(null, require('./functions/Overview/Percent').default)
+            cb(null, require(`./functions/Components/docs/${component}.doc`).default)
           })
         }} />
       </Route>
-        {/*交互进阶*/}
-        <Route path="exchange">
-            <Route path="auto_complete" getComponent={(location, cb) => {
-                require.ensure([], require => {
-                    cb(null, require('./functions/Exchange/Auto_Complete').default)
-                })
-            }} />
-        </Route>
-        {/*business customization*/}
-        <Route path="business">
-            <Route path="navigation" getComponent={(location, cb) => {
-                require.ensure([], require => {
-                    cb(null, require('./functions/Business/Navigation').default)
-                })
-            }} />
-        </Route>
-        {/*tool module*/}
-        <Route path="tool">
-            <Route path="data" getComponent={(location, cb) => {
-                require.ensure([], require => {
-                    cb(null, require('./functions/Tool/Data').default)
-                })
-            }} />
-            <Route path="fetchdata" getComponent={(location, cb) => {
-                require.ensure([], require => {
-                    cb(null, require('./functions/Tool/FetchData').default)
-                })
-            }} />
-            <Route path="search" getComponent={(location, cb) => {
-                require.ensure([], require => {
-                    cb(null, require('./functions/Tool/Search').default)
-                })
-            }} />
-        </Route>
         {/*  登录  */}
       <Route path="login" getComponent={(location, cb) => {
         require.ensure([], require => {
