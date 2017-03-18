@@ -1,0 +1,10 @@
+import Button from 'bfd/Button'
+
+const ButtonType = () => {
+    return (
+        <div>
+            <Button>默认</Button>
+            <Button type="minor">次要</Button>
+        </div>
+    )
+}
