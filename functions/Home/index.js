@@ -81,8 +81,9 @@ class App extends Component {
 
         <div className="home_bottom">
           <Center>
-            <h1>巨人的肩膀，无所不能</h1>
-            <p>UI涉及</p>
+            <h3>一个喜欢编程，喜欢摄影，喜欢学习，钻研技术问题</h3>
+            <p>暂时还没上npm仓库里，Github自己clone咯－－</p>
+            <p> safeguard(saucxs)：学生，目标全栈，创新创业积极分子，疯子</p>
           </Center>
         </div>
       </div>

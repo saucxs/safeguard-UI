@@ -1,21 +1,23 @@
-@import '~normalize.css';
+html, body, #app {
+  height: 100%;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
+  font-weight: 100;
   margin-top: 1.3em;
   margin-bottom: 1em;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 2em;
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 1.5em;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 1.3em;
 }
 
 a {
@@ -26,27 +28,29 @@ a {
   }
 }
 
+pre, code {
+  font-family: "Lucida Console", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+}
+
 * {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: #666;
+  font-family: "PingFangSC-Thin", "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  color: #333;
   font-size: 12px;
   line-height: 1.5;
 }
 
 .wrapper {
-  animation: wrapper--fade .25s cubic-bezier(.455,.03,.515,.955);
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  animation: wrapper-fade .25s cubic-bezier(.455,.03,.515,.955);
 }
 
-@keyframes wrapper--fade {
+@keyframes wrapper-fade {
   0% {
     opacity: 0;
   }
@@ -54,6 +58,11 @@ body {
     opacity: 1;
   }
 }
+
+.body {
+  min-height: 100vh;
+}
+
 
 /* Make clicks pass-through */
 #nprogress {
@@ -72,6 +81,10 @@ body {
   height: 2px;
 }
 
+body.index #nprogress .bar {
+  background-color: #42a5f6;
+}
+
 /* Fancy blur effect */
 #nprogress .peg {
   display: block;
@@ -82,8 +95,8 @@ body {
   opacity: 1.0;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
-      -ms-transform: rotate(3deg) translate(0px, -4px);
-          transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
 }
 
 /* Remove these to get rid of the spinner */

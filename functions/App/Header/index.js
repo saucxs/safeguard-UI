@@ -1,3 +1,4 @@
+import 'normalize.css'
 import './index.less'
 import React, { PropTypes, Component } from 'react'
 import { Row, Col } from 'bfd/Layout'
@@ -48,7 +49,7 @@ class Header extends Component {
     return (
       <Row className="header" fluid>
         <Col>
-          <Link to="/" className="header__logo">
+          <Link to="/" className="header_logo">
             safeguard-UI<sub>v0.0.1</sub>
           </Link>
         </Col>

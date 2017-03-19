@@ -1,4 +1,4 @@
-import './index.less'
+import '../pre.less'
 import React, { PropTypes } from 'react'
 import classnames from 'classnames'
 import beautify from 'code-beautify'
@@ -8,7 +8,7 @@ const Pre = props => {
   const code = beautify(children, lang || 'js')
   return (
     <pre
-      className={classnames('pre', {'pre--transparent': transparent}, className)}
+      className={classnames('pre', {'pre_transparent': transparent}, className)}
       dangerouslySetInnerHTML={{__html: code}}
     />
   )

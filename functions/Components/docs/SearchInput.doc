@@ -1,0 +1,24 @@
+/**
+ * @title 搜索框
+ */
+import { Component } from 'react'
+import SearchInput from 'bfd/SearchInput'
+
+class SearchInputDemo extends Component {
+
+  handleSearch(value) {
+    console.log(value);
+  }
+
+  render() {
+    return (
+      <SearchInput
+        width="280px"
+        placeholder="请输入关键词"
+        onSearch={::this.handleSearch}
+      />
+    )
+  }
+}
+
+@component SearchInput
