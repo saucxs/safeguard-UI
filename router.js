@@ -52,6 +52,11 @@ export default render((
           cb(null, require('./functions/Home').default)
         })
       }} />
+      <Route path="guide"getComponent={(location,cb)=>{
+        require.ensure([],require=>{
+          cb(null,require('./functions/Guide').default)
+        })
+      }} />
       {/*component*/}
       <Route path="todos" getComponent={(location, cb) => {
         require.ensure([], require => {

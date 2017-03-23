@@ -4,7 +4,7 @@
 import React from 'react'
 import Center from 'public/Center'
 import Markdown from 'public/Markdown'
-import html from '../../README.md'
+import html from 'test.md'
 
 export default () => {
   return (
